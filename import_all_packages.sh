@@ -2,60 +2,75 @@
 
 set -e
 
-# Ensure we're inside a Git repository
-if ! git rev-parse --git-dir > /dev/null 2>&1; then
-  echo "❌ Error: This script must be run inside a Git repository."
-  exit 1
-fi
-
+# Constants
 PACKAGES_PATH="packages"
 ORG_URL="https://github.com/GenieCoderSrc"
 
 echo "📦 Scanning packages in $PACKAGES_PATH..."
 
-# Loop through each directory inside packages/
-for dir in "$PACKAGES_PATH"/*/; do
+# Track if any changes were made
+changes_made=false
+
+# Loop through each directory or expected repo name
+for dir in "$PACKAGES_PATH"/*; do
+  [ -d "$dir" ] || continue
   PACKAGE_NAME=$(basename "$dir")
   SUBFOLDER="$PACKAGES_PATH/$PACKAGE_NAME"
   REPO_URL="$ORG_URL/$PACKAGE_NAME.git"
 
   echo ""
-  echo "🚀 Processing $PACKAGE_NAME into $SUBFOLDER ..."
+  echo "🚀 Processing $PACKAGE_NAME ..."
 
-  # Clean existing remote if already present
-  if git remote | grep -q "^$PACKAGE_NAME$"; then
-    echo "🔁 Removing existing remote $PACKAGE_NAME"
-    git remote remove "$PACKAGE_NAME"
+  # Check for uncommitted changes
+  if ! git diff --quiet || ! git diff --cached --quiet; then
+    echo "💾 Uncommitted changes detected. Committing..."
+    git add .
+    git commit -m "chore: auto-commit before importing $PACKAGE_NAME"
+    changes_made=true
   fi
 
-  git remote add "$PACKAGE_NAME" "$REPO_URL"
+  # Add and fetch from remote
+  git remote add "$PACKAGE_NAME" "$REPO_URL" 2> /dev/null || true
+  git fetch "$PACKAGE_NAME" --all
 
-  # Fetch remote
-  echo "📥 Fetching $REPO_URL ..."
-  git fetch "$PACKAGE_NAME" || {
-    echo "⚠️ Failed to fetch $PACKAGE_NAME from $REPO_URL"
-    git remote remove "$PACKAGE_NAME"
-    continue
-  }
+  # Get list of branches
+  branches=$(git ls-remote --heads "$REPO_URL" | awk '{print $2}' | sed 's/refs\/heads\///')
 
-  # Pull or Add subtree
-  if [ -d "$SUBFOLDER" ]; then
-    echo "🔄 Updating existing package using subtree pull..."
-    git subtree pull --prefix="$SUBFOLDER" "$PACKAGE_NAME" main --squash || {
-      echo "⚠️ Subtree pull failed for $PACKAGE_NAME"
-    }
-  else
-    echo "➕ Adding new package using subtree add..."
-    git subtree add --prefix="$SUBFOLDER" "$PACKAGE_NAME" main --squash || {
-      echo "⚠️ Subtree add failed for $PACKAGE_NAME"
-    }
-  fi
+  for branch in $branches; do
+    echo "🌿 Importing branch '$branch' of $PACKAGE_NAME..."
 
-  # Remove remote to keep things clean
-  git remote remove "$PACKAGE_NAME"
+    if [ -d "$SUBFOLDER" ]; then
+      echo "🔄 Pulling updates into $SUBFOLDER ..."
+      if git subtree pull --prefix="$SUBFOLDER" "$PACKAGE_NAME" "$branch" --squash; then
+        echo "✅ Pulled $PACKAGE_NAME/$branch"
+        changes_made=true
+      else
+        echo "⚠️ Subtree pull failed for $PACKAGE_NAME/$branch"
+      fi
+    else
+      echo "➕ Adding new subtree $PACKAGE_NAME/$branch ..."
+      if git subtree add --prefix="$SUBFOLDER" "$PACKAGE_NAME" "$branch" --squash; then
+        echo "✅ Added $PACKAGE_NAME/$branch"
+        changes_made=true
+      else
+        echo "⚠️ Subtree add failed for $PACKAGE_NAME/$branch"
+      fi
+    fi
+  done
 
-  echo "✅ Done with $PACKAGE_NAME"
+  git remote remove "$PACKAGE_NAME" || true
 done
 
+# Push if changes were made
+if [ "$changes_made" = true ]; then
+  echo ""
+  echo "🚀 Pushing changes to origin..."
+  git push origin "$(git rev-parse --abbrev-ref HEAD)"
+  echo "✅ All changes pushed"
+else
+  echo ""
+  echo "ℹ️ No changes to push."
+fi
+
 echo ""
-echo "🎉 All packages processed in $PACKAGES_PATH/"
+echo "🎉 All packages processed successfully!"

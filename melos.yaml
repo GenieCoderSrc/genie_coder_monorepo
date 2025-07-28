@@ -1,0 +1,13 @@
+name: genie_coder_monorepo
+repository: https://github.com/GenieCoderSrc/genie_coder_monorepo
+packages:
+  - packages/*
+
+command:
+  version:
+    linkToCommits: true
+    updateGitTagRefs: true
+    includeCommitId: true
+  bootstrap:
+    runPubGetInParallel: true
+

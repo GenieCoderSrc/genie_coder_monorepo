@@ -1,0 +1,9 @@
+.dart_tool/
+.packages
+build/
+.idea/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+.pub-cache/
+.env

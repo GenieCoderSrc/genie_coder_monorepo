@@ -1,0 +1,13 @@
+name: genie_coder_monorepo
+description: Genie Coder Dart/Flutter package monorepo
+version: 0.0.1
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=1.17.0"
+
+
+dependencies:
+
+dev_dependencies:
+  melos: ^6.3.3

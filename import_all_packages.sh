@@ -31,7 +31,7 @@ for dir in "$PACKAGES_PATH"/*; do
 
   # Add and fetch from remote
   git remote add "$PACKAGE_NAME" "$REPO_URL" 2> /dev/null || true
-  git fetch "$PACKAGE_NAME" --all
+  git fetch "$PACKAGE_NAME"
 
   # Get list of branches
   branches=$(git ls-remote --heads "$REPO_URL" | awk '{print $2}' | sed 's/refs\/heads\///')

@@ -10,5 +10,5 @@ echo "📝 Committing all changes..."
 git add .
 git commit -m "chore: sync all packages" || echo "⚠️ Nothing to commit."
 
-echo "⬆️ Pushing subtrees..."
-./scripts/push_subtrees.sh
+#echo "⬆️ Pushing subtrees..."
+#./scripts/push_subtrees.sh

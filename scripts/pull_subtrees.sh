@@ -1,15 +1,22 @@
 #!/bin/bash
+
 set -e
 
+echo "⬇️ Pulling subtrees from their remotes..."
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR" || exit 1
+
 PACKAGES_DIR="packages"
-ORG_URL="https://github.com/GenieCoderSrc"
 
 for dir in "$PACKAGES_DIR"/*/; do
-  PACKAGE_NAME=$(basename "$dir")
-  REPO_URL="$ORG_URL/$PACKAGE_NAME.git"
+  pkg_name=$(basename "$dir")
+  remote_name="subtree-$pkg_name"
 
-  echo "⬇️ Pulling latest from $PACKAGE_NAME..."
-  git subtree pull --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main || echo "⚠️ Nothing to pull"
-#  git subtree pull --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main --squash || echo "⚠️ Nothing to pull"
+  if git remote | grep -q "^$remote_name$"; then
+    echo "📥 Pulling subtree for $pkg_name from $remote_name..."
+    git subtree pull --prefix="$PACKAGES_DIR/$pkg_name" "$remote_name" main --squash
+  else
+    echo "⚠️ Remote '$remote_name' not found. Skipping $pkg_name."
+  fi
 done
-

@@ -11,3 +11,19 @@ command:
   bootstrap:
     runPubGetInParallel: true
 
+
+scripts:
+  analyze:
+    run: flutter analyze
+  format:
+    run: dart format .
+  test:
+    run: flutter test --coverage
+    select-package:
+      dir-exists: test
+      file-exists: pubspec.yaml
+      depends-on: flutter_test
+
+
+
+

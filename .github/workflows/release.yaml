@@ -10,22 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.8'
 
-      - name: Activate Melos
-        run: dart pub global activate melos
+      - name: Activate Melos globally
+        run: flutter pub global activate melos
 
-      - name: Bootstrap Packages
-        run: melos bootstrap
+      - name: Bootstrap packages
+        run: flutter pub global run melos bootstrap
 
-      - name: Version Packages
-        run: melos version --yes
+      - name: Version packages
+        run: flutter pub global run melos version --yes
 
-      - name: Publish Packages
-        run: melos publish --yes
+      - name: Publish packages
+        run: flutter pub global run melos publish --yes
         env:
-          PUB_CREDENTIALS: ${{ secrets.GH_PAT }}
-
+          PUB_CREDENTIALS: ${{ secrets.MONO_REPO_PAT }}

@@ -1,13 +1,22 @@
+# genie_coder_monorepo/pubspec.yaml
+
 name: genie_coder_monorepo
 description: Genie Coder Dart/Flutter package monorepo
 version: 0.0.1
+publish_to: "none"
 
 environment:
-  sdk: ^3.8.0
+  sdk: ">=3.8.0 <4.0.0"
   flutter: ">=1.17.0"
-
-
 dependencies:
+  flutter:
+    sdk: flutter
+
+  # Shared dependencies across all packages
+  cloud_firestore: ^6.0.0
+
+dependency_overrides:
+  cloud_firestore: ^6.0.0
 
 dev_dependencies:
   melos: ^6.3.3

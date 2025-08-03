@@ -1,0 +1,104 @@
+name: Subtree Two-Way Sync
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [sync-from-original]
+
+jobs:
+  sync-subtrees:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout mono repo
+      - name: Checkout mono repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
+
+      # 2. Configure Git
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      # 3. Determine packages to sync
+      - name: Determine affected packages
+        id: detect
+        run: |
+          ORG="GenieCoderSrc"
+          BRANCH="main"
+
+          if [[ "${{ github.event_name }}" == "repository_dispatch" ]]; then
+            # Single repo sync from original repo
+            echo "packages/${{ github.event.client_payload.repo_name }}" > subtree_list.txt
+            echo "📌 Mode: Single subtree sync from original repo"
+          else
+            # Detect changed packages in mono repo
+            CHANGED_DIRS=$(git diff --name-only HEAD^ HEAD | grep "^packages/" | cut -d/ -f1-2 | sort -u)
+            if [[ -z "$CHANGED_DIRS" ]]; then
+              echo "ℹ️ No subtree changes detected, exiting."
+              exit 0
+            fi
+            echo "$CHANGED_DIRS" > subtree_list.txt
+            echo "📌 Mode: Changed subtrees only"
+          fi
+
+          echo "org=$ORG" >> $GITHUB_ENV
+          echo "branch=$BRANCH" >> $GITHUB_ENV
+          cat subtree_list.txt
+
+      # 4. Pull updates from original repos into mono repo
+      - name: Pull from original repos
+        run: |
+          while read folder; do
+            [ ! -f "$folder/pubspec.yaml" ] && echo "⏩ Skipping $folder (no pubspec.yaml)" && continue
+            repo_name=$(basename "$folder")
+            repo_url="https://github.com/$org/$repo_name.git"
+            if [ -d "$folder" ]; then
+              echo "📥 Pulling $repo_name..."
+              git subtree pull --prefix="$folder" "$repo_url" "$branch" --squash || true
+            else
+              echo "➕ Adding $repo_name..."
+              git subtree add --prefix="$folder" "$repo_url" "$branch" --squash
+            fi
+          done < subtree_list.txt
+
+      # 5. Commit mono repo changes (if any)
+      - name: Commit mono repo changes
+        run: |
+          git add .
+          git commit -m "🔄 Sync from original repos" || echo "ℹ️ No changes to commit."
+
+      # 6. Push mono repo changes
+      - name: Push mono repo changes
+        run: git push origin main
+
+      # 7. Push updates back to original repos (Auto-create if missing)
+      - name: Push back to original repos
+        run: |
+          for folder in $(cat subtree_list.txt); do
+            [ ! -f "$folder/pubspec.yaml" ] && echo "⏩ Skipping $folder (no pubspec.yaml)" && continue
+
+            repo_name=$(basename "$folder")
+            repo_url="https://github.com/$org/$repo_name.git"
+
+            # Create repo if missing
+            status_code=$(curl -s -o /dev/null -w "%{http_code}" \
+              -H "Authorization: token ${{ secrets.GH_PAT }}" \
+              https://api.github.com/repos/$org/$repo_name)
+
+            if [ "$status_code" -eq 404 ]; then
+              echo "🚀 Creating $repo_name..."
+              curl -s -X POST \
+                -H "Authorization: token ${{ secrets.GH_PAT }}" \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://api.github.com/orgs/$org/repos \
+                -d "{\"name\":\"$repo_name\",\"private\":true}" > /dev/null
+            fi
+
+            echo "📤 Pushing $repo_name..."
+            git subtree push --prefix="$folder" "$repo_url" "$branch" || echo "⚠️ No changes to push."
+          done

@@ -27,5 +27,5 @@ jobs:
       - name: Publish Packages
         run: melos publish --yes
         env:
-          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+          PUB_CREDENTIALS: ${{ secrets.GH_PAT }}
 

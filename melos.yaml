@@ -10,6 +10,7 @@ command:
     includeCommitId: true
   bootstrap:
     runPubGetInParallel: true
+    usePubspecOverrides: true
 
 
 scripts:

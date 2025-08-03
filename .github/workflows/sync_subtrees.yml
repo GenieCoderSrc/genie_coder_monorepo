@@ -1,57 +1,57 @@
-name: 🔁 Sync Subtrees
-
-on:
-  workflow_dispatch: # Manual trigger
-  push:
-    branches:
-      - main
-
-jobs:
-  sync-subtrees:
-    name: 🔁 Sync and Push Subtrees
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Needed for full subtree history
-
-      - name: 🛠 Set up Git
-        run: |
-          git config user.name "genie-coder-bot"
-          git config user.email "bot@geniecoder.org"
-
-      - name: 🔄 Sync all packages
-        run: |
-          set -e
-          PACKAGES_DIR="packages"
-          ORG_URL="https://github.com/GenieCoderSrc"
-
-          echo "🔍 Finding packages in $PACKAGES_DIR..."
-          for dir in "$PACKAGES_DIR"/*/; do
-            PACKAGE_NAME=$(basename "$dir")
-            REPO_URL="$ORG_URL/$PACKAGE_NAME.git"
-
-            echo ""
-            echo "⬇️ Pulling from $PACKAGE_NAME..."
-            git subtree pull --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main || echo "⚠️ Nothing to pull"
-#            git subtree pull --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main --squash || echo "⚠️ Nothing to pull"
-
-          done
-
-          echo ""
-          echo "📝 Commit changes if any..."
-          git add $PACKAGES_DIR
-          git commit -m "chore: sync all packages from subtree remotes" || echo "✅ No changes to commit"
-
-          for dir in "$PACKAGES_DIR"/*/; do
-            PACKAGE_NAME=$(basename "$dir")
-            REPO_URL="$ORG_URL/$PACKAGE_NAME.git"
-
-            echo ""
-            echo "⬆️ Pushing back to $PACKAGE_NAME..."
-            git subtree push --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main || echo "⚠️ Nothing to push"
-          done
-
-          echo "✅ All subtree sync operations complete."
+#name: 🔁 Sync Subtrees
+#
+#on:
+#  workflow_dispatch: # Manual trigger
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  sync-subtrees:
+#    name: 🔁 Sync and Push Subtrees
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: ⬇️ Checkout repo
+#        uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0  # Needed for full subtree history
+#
+#      - name: 🛠 Set up Git
+#        run: |
+#          git config user.name "genie-coder-bot"
+#          git config user.email "bot@geniecoder.org"
+#
+#      - name: 🔄 Sync all packages
+#        run: |
+#          set -e
+#          PACKAGES_DIR="packages"
+#          ORG_URL="https://github.com/GenieCoderSrc"
+#
+#          echo "🔍 Finding packages in $PACKAGES_DIR..."
+#          for dir in "$PACKAGES_DIR"/*/; do
+#            PACKAGE_NAME=$(basename "$dir")
+#            REPO_URL="$ORG_URL/$PACKAGE_NAME.git"
+#
+#            echo ""
+#            echo "⬇️ Pulling from $PACKAGE_NAME..."
+#            git subtree pull --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main || echo "⚠️ Nothing to pull"
+##            git subtree pull --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main --squash || echo "⚠️ Nothing to pull"
+#
+#          done
+#
+#          echo ""
+#          echo "📝 Commit changes if any..."
+#          git add $PACKAGES_DIR
+#          git commit -m "chore: sync all packages from subtree remotes" || echo "✅ No changes to commit"
+#
+#          for dir in "$PACKAGES_DIR"/*/; do
+#            PACKAGE_NAME=$(basename "$dir")
+#            REPO_URL="$ORG_URL/$PACKAGE_NAME.git"
+#
+#            echo ""
+#            echo "⬆️ Pushing back to $PACKAGE_NAME..."
+#            git subtree push --prefix="$PACKAGES_DIR/$PACKAGE_NAME" "$REPO_URL" main || echo "⚠️ Nothing to push"
+#          done
+#
+#          echo "✅ All subtree sync operations complete."

@@ -1,0 +1,22 @@
+name: Notify Mono Repo to Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-mono:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send repository dispatch to mono repo
+        run: |
+          MONO_REPO="GenieCoderSrc/genie_coder_monorepo"
+          
+          echo "📢 Sending repository_dispatch to $MONO_REPO ..."
+          
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GH_PAT }}" \
+            "https://api.github.com/repos/$MONO_REPO/dispatches" \
+            -d '{"event_type":"sync-from-original", "client_payload": {"repo_name": "'"$(basename $GITHUB_REPOSITORY)"'"}}'

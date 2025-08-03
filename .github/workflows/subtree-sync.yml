@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.MONO_REPO_PAT }}
 
       # 2. Configure Git
       - name: Configure Git
@@ -87,13 +87,13 @@ jobs:
 
             # Create repo if missing
             status_code=$(curl -s -o /dev/null -w "%{http_code}" \
-              -H "Authorization: token ${{ secrets.GH_PAT }}" \
+              -H "Authorization: token ${{ secrets.MONO_REPO_PAT }}" \
               https://api.github.com/repos/$org/$repo_name)
 
             if [ "$status_code" -eq 404 ]; then
               echo "🚀 Creating $repo_name..."
               curl -s -X POST \
-                -H "Authorization: token ${{ secrets.GH_PAT }}" \
+                -H "Authorization: token ${{ secrets.MONO_REPO_PAT }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 https://api.github.com/orgs/$org/repos \
                 -d "{\"name\":\"$repo_name\",\"private\":true}" > /dev/null

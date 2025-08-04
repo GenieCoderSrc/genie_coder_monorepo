@@ -1,1 +1,1 @@
-packages/location_crud_service-
+packages/location_reader

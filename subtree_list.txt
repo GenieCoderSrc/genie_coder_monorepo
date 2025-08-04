@@ -1,3 +1,1 @@
-packages/icon_data_generator
-packages/location_crud_service-
-packages/location_reader
+packages/reusable_editor

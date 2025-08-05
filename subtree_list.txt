@@ -1,1 +1,1 @@
-packages/reusable_image_widget
+packages/image_picker_adapter

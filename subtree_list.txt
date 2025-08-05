@@ -1,1 +1,1 @@
-packages/reusable_speed_dial
+packages/language_translator

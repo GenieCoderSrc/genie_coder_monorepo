@@ -13,6 +13,12 @@
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/geo_lat_lon/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/geo_lat_lon/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/geo_lat_lon/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/geo_lat_lon/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/geo_lat_lon/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/geo_lat_lon/example/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />

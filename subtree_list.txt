@@ -1,1 +1,2 @@
 packages/firestore_db_impl
+packages/location_reader

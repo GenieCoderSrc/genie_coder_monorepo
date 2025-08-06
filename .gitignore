@@ -7,3 +7,4 @@ build/
 .melos_tool/
 .pub-cache/
 .env
+**/pubspec_overrides.yaml

@@ -23,7 +23,7 @@ fi
 
 # 3. Version bump
 echo "🔢 Running melos version (auto version bump)..."
-melos version --yes
+melos version --yes --all --changed
 echo "✅ Version bump complete"
 echo
 

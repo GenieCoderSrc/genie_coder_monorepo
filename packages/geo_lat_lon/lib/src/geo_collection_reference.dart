@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:rxdart/rxdart.dart';
 
-import 'geo_lat_lon.dart';
+import 'geo_fire_point.dart';
 import 'math.dart';
 import 'utils/neighbor_geohashes.dart' as utils;
 
@@ -46,7 +46,7 @@ class GeoCollectionReference<T> {
     required final String field,
     required final GeoPoint geopoint,
   }) async => _collectionReference.doc(id).update(<String, dynamic>{
-    field: GeoLatLon(geopoint).data,
+    field: GeoFirePoint(geopoint).data,
   });
 
   /// Deletes the document from the collection.
@@ -65,7 +65,7 @@ class GeoCollectionReference<T> {
   /// given radius.
   /// * [asBroadcastStream] Whether to return geo query results as broadcast.
   Stream<List<DocumentSnapshot<T>>> subscribeWithin({
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
     required final double radiusInKm,
     required final String field,
     required final GeoPoint Function(T obj) geopointFrom,
@@ -101,7 +101,7 @@ class GeoCollectionReference<T> {
   /// given radius.
   /// * [asBroadcastStream] Whether to return geo query results as broadcast.
   Stream<List<GeoDocumentSnapshot<T>>> subscribeWithinWithDistance({
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
     required final double radiusInKm,
     required final String field,
     required final GeoPoint Function(T obj) geopointFrom,
@@ -169,7 +169,7 @@ class GeoCollectionReference<T> {
   /// given radius.
   /// * [isCacheFirst] Whether to fetch documents from cache first.
   Future<List<DocumentSnapshot<T>>> fetchWithin({
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
     required final double radiusInKm,
     required final String field,
     final String geohashField = 'geohash',
@@ -208,7 +208,7 @@ class GeoCollectionReference<T> {
   /// given radius.
   /// * [isCacheFirst] Whether to fetch documents from cache first.
   Future<List<GeoDocumentSnapshot<T>>> fetchWithinWithDistance({
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
     required final double radiusInKm,
     required final String field,
     final String geohashField = 'geohash',
@@ -263,7 +263,7 @@ class GeoCollectionReference<T> {
   /// Geohashes.
   List<Stream<List<QueryDocumentSnapshot<T>>>> _collectionStreams({
     required final double radiusInKm,
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
     required final String field,
     final String geohashField = 'geohash',
     final Query<T>? Function(Query<T> query)? queryBuilder,
@@ -284,7 +284,7 @@ class GeoCollectionReference<T> {
   /// Geohashes.
   List<Future<List<QueryDocumentSnapshot<T>>>> _collectionFutures({
     required final double radiusInKm,
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
     required final String field,
     required final String geohashField,
     final Query<T>? Function(Query<T> query)? queryBuilder,
@@ -316,7 +316,7 @@ class GeoCollectionReference<T> {
   /// Returns neighbor and center geohash strings.
   List<String> _geohashes({
     required final double radiusInKm,
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
   }) {
     final precisionDigits = geohashDigitsFromRadius(radiusInKm);
     final centerGeohash = center.geohash.substring(0, precisionDigits);
@@ -396,7 +396,7 @@ class GeoCollectionReference<T> {
   _nullableGeoDocumentSnapshotFromQueryDocumentSnapshot({
     required final QueryDocumentSnapshot<T> queryDocumentSnapshot,
     required final GeoPoint Function(T obj) geopointFrom,
-    required final GeoLatLon center,
+    required final GeoFirePoint center,
   }) {
     final exists = queryDocumentSnapshot.exists;
     if (!exists) {

@@ -10,12 +10,12 @@ class SetOrDeleteLocationDialog extends StatelessWidget {
     super.key,
     required this.id,
     required this.name,
-    required this.geoLatLon,
+    required this.geoFirePoint,
   });
 
   final String id;
   final String name;
-  final GeoLatLon geoLatLon;
+  final GeoFirePoint geoFirePoint;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class SetOrDeleteLocationDialog extends StatelessWidget {
               builder: (_) => SetLocationDialog(
                 id: id,
                 name: name,
-                geoLatLon: geoLatLon,
+                geoFirePoint: geoFirePoint,
               ),
             ),
             child: const Text('set location'),
@@ -45,7 +45,7 @@ class SetOrDeleteLocationDialog extends StatelessWidget {
               builder: (_) => DeleteLocationDialog(
                 id: id,
                 name: name,
-                geoLatLon: geoLatLon,
+                geoFirePoint: geoFirePoint,
               ),
             ),
             child: const Text('delete location'),

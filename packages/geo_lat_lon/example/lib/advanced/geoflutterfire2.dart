@@ -52,7 +52,7 @@
 //       _geoQueryCondition.switchMap(
 //     (geoQueryCondition) =>
 //         GeoFireCollectionRef(_collectionReference.orderBy('name')).within(
-//       center: GeoLatLon(
+//       center: GeoFirePoint(
 //         _cameraPosition.target.latitude,
 //         _cameraPosition.target.longitude,
 //       ),

@@ -4,9 +4,9 @@ import 'math.dart';
 import 'utils/neighbor_geohashes.dart' as utils;
 
 /// A model corresponds to Cloud Firestore as geopoint field.
-class GeoLatLon {
-  /// Instantiates [GeoLatLon].
-  const GeoLatLon(this.geopoint);
+class GeoFirePoint {
+  /// Instantiates [GeoFirePoint].
+  const GeoFirePoint(this.geopoint);
 
   /// [GeoPoint] of the location.
   final GeoPoint geopoint;
@@ -17,14 +17,14 @@ class GeoLatLon {
   /// Returns longitude of the location.
   double get longitude => geopoint.longitude;
 
-  /// Returns geohash of [GeoLatLon].
+  /// Returns geohash of [GeoFirePoint].
   String get geohash =>
       encode(latitude: geopoint.latitude, longitude: geopoint.longitude);
 
-  /// Returns all neighbors of [GeoLatLon].
+  /// Returns all neighbors of [GeoFirePoint].
   List<String> get neighbors => utils.neighborGeohashesOf(geohash: geohash);
 
-  /// Returns distance in kilometers between [GeoLatLon] and given
+  /// Returns distance in kilometers between [GeoFirePoint] and given
   /// [geopoint].
   double distanceBetweenInKm({required final GeoPoint geopoint}) =>
       distanceInKm(geopoint1: this.geopoint, geopoint2: geopoint);

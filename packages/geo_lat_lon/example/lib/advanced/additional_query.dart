@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:geo_lat_lon/geo_lat_lon.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:simple/converter/location_firestore_model_converter.dart';
 
 import '../add_location.dart';
 import '../set_or_delete_location.dart';
@@ -56,7 +57,7 @@ class AdditionalQueryExampleState extends State<AdditionalQueryExample> {
       );
 
       return GeoCollectionReference<Location>(collectionRef).subscribeWithin(
-        center: GeoLatLon(
+        center: GeoFirePoint(
           GeoPoint(
             _cameraPosition.target.latitude,
             _cameraPosition.target.longitude,
@@ -109,7 +110,7 @@ class AdditionalQueryExampleState extends State<AdditionalQueryExample> {
           builder: (context) => SetOrDeleteLocationDialog(
             id: id,
             name: name,
-            geoLatLon: GeoLatLon(
+            geoFirePoint: GeoFirePoint(
               GeoPoint(geoPoint.latitude, geoPoint.longitude),
             ),
           ),

@@ -7,12 +7,12 @@ class SetLocationDialog extends StatefulWidget {
     super.key,
     required this.id,
     required this.name,
-    required this.geoLatLon,
+    required this.geoFirePoint,
   });
 
   final String id;
   final String name;
-  final GeoLatLon geoLatLon;
+  final GeoFirePoint geoFirePoint;
 
   @override
   State<SetLocationDialog> createState() => _SetLocationDialogState();
@@ -27,8 +27,8 @@ class _SetLocationDialogState extends State<SetLocationDialog> {
   void initState() {
     super.initState();
     _nameEditingController.text = widget.name;
-    _latitudeEditingController.text = widget.geoLatLon.latitude.toString();
-    _longitudeEditingController.text = widget.geoLatLon.longitude.toString();
+    _latitudeEditingController.text = widget.geoFirePoint.latitude.toString();
+    _longitudeEditingController.text = widget.geoFirePoint.longitude.toString();
   }
 
   @override
@@ -126,13 +126,13 @@ class _SetLocationDialogState extends State<SetLocationDialog> {
     double newLatitude,
     double newLongitude,
   ) async {
-    final geoLatLon = GeoLatLon(GeoPoint(newLatitude, newLongitude));
+    final geoFirePoint = GeoFirePoint(GeoPoint(newLatitude, newLongitude));
     await GeoCollectionReference<Map<String, dynamic>>(
       FirebaseFirestore.instance.collection('locations'),
     ).set(
       id: id,
       data: {
-        'geo': geoLatLon.data,
+        'geo': geoFirePoint.data,
         'name': newName,
       },
       options: SetOptions(merge: true),

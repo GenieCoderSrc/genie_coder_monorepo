@@ -33,15 +33,7 @@ melos run format || echo "⚠️ Format failed, continuing..."
 echo "✅ Formatting done"
 echo
 
-# 5. Dry run publish
-echo "🔍 Running dry run publish..."
-melos publish --dry-run
-
-# 6. Publish
-echo "🚀 Publishing to pub.dev..."
-melos publish --yes
-
-# 7. Commit and push changes
+# 5. Commit and push changes
 echo "📌 Committing version bump and publishing..."
 if [[ -n "$(git status --porcelain)" ]]; then
   git add .
@@ -52,5 +44,15 @@ if [[ -n "$(git status --porcelain)" ]]; then
 else
   echo "ℹ️ No changes to commit."
 fi
+
+
+# 6. Dry run publish
+echo "🔍 Running dry run publish..."
+melos publish --dry-run
+
+# 7. Publish
+echo "🚀 Publishing to pub.dev..."
+melos publish --yes
+
 
 echo "🎯 All packages published successfully!"

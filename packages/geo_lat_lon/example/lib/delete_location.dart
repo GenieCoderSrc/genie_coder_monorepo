@@ -7,12 +7,12 @@ class DeleteLocationDialog extends StatelessWidget {
     super.key,
     required this.id,
     required this.name,
-    required this.geoLatLon,
+    required this.geoFirePoint,
   });
 
   final String id;
   final String name;
-  final GeoLatLon geoLatLon;
+  final GeoFirePoint geoFirePoint;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,9 @@ class DeleteLocationDialog extends StatelessWidget {
         children: [
           Text('name: $name'),
           const SizedBox(height: 8),
-          Text('latitude: ${geoLatLon.latitude}'),
+          Text('latitude: ${geoFirePoint.latitude}'),
           const SizedBox(height: 8),
-          Text('longitude: ${geoLatLon.longitude}'),
+          Text('longitude: ${geoFirePoint.longitude}'),
           const SizedBox(height: 8),
           Align(
             child: ElevatedButton(

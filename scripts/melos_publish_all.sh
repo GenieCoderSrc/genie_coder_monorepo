@@ -52,7 +52,7 @@ echo
 # We manually push the commits and tags.
 echo "📌 Pushing commits and tags to GitHub..."
 git push
-git push --tags
+#git push --tags
 echo "✅ Changes pushed to GitHub with tags"
 
 # 7. Dry run publish

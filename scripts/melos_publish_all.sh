@@ -48,11 +48,11 @@ if [[ -n "$(git status --porcelain)" ]]; then
   git commit -m "🔖 chore: version bump and publish packages"
 
   git push
-  if [[ "${PUSH_TAGS:-true}" == "true" ]]; then
-    git push --tags
-  else
-    echo "🔖 Skipping tag push due to PUSH_TAGS=false"
-  fi
+#  if [[ "${PUSH_TAGS:-true}" == "true" ]]; then
+#    git push --tags
+#  else
+#    echo "🔖 Skipping tag push due to PUSH_TAGS=false"
+#  fi
   echo "✅ Changes pushed to GitHub with tags"
 else
   echo "ℹ️ No changes to commit."

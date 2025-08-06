@@ -28,7 +28,7 @@ echo "✅ Formatting done"
 echo
 
 # 4. Commit changes
-# This is a crucial step to provide melos version with a git history.
+# Commit any changes before running melos version.
 echo "📌 Committing changes before versioning..."
 if [[ -n "$(git status --porcelain)" ]]; then
   git add .
@@ -42,22 +42,18 @@ echo
 # 5. Version bump
 # Melos will now use the new commit to determine the version bump.
 echo "🔢 Running melos version (auto version bump)..."
-# We add --no-push to prevent Melos from pushing tags before we're ready.
-melos version --yes --all --no-push
+# The --no-push flag is not a valid option for melos version.
+# Melos version will create the tags locally.
+melos version --yes --all
 echo "✅ Version bump complete"
 echo
 
-# 6. Commit and push the version bump
-echo "📌 Committing version bump and pushing..."
-if [[ -n "$(git status --porcelain)" ]]; then
-  git add .
-  git commit -m "🔖 chore: publish packages"
-  git push
-  git push --tags
-  echo "✅ Changes pushed to GitHub with tags"
-else
-  echo "ℹ️ No version changes to commit."
-fi
+# 6. Push changes and tags
+# We manually push the commits and tags.
+echo "📌 Pushing commits and tags to GitHub..."
+git push
+git push --tags
+echo "✅ Changes pushed to GitHub with tags"
 
 # 7. Dry run publish
 echo "🔍 Running dry run publish..."

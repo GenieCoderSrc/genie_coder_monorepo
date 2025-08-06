@@ -1,1 +1,1 @@
-packages/location_crud_service-
+packages/geo_lat_lon

@@ -63,5 +63,5 @@ echo
 
 # 8. Publish
 echo "🚀 Publishing to pub.dev..."
-melos publish --yes
+melos publish --no-dry-run
 echo "🎯 All packages published successfully!"

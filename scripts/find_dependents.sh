@@ -1,64 +1,55 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "🚀 Melos Release Script (Flutter Monorepo + Conventional Changelog)"
-echo
+echo "⏳ Fetching latest origin/main..."
+git fetch origin main
 
-# Go to repo root
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$ROOT_DIR"
+echo "🔍 Detecting changed packages compared to origin/main..."
+CHANGED_PACKAGES=$(melos list --diff=origin/main --json | jq -r '.[].name')
 
-# 1️⃣ Ensure Melos is installed
-if ! command -v melos &> /dev/null; then
-  echo "❌ Melos not found. Installing..."
-  dart pub global activate melos
-fi
-
-# 2️⃣ Bootstrap packages
-echo "🔁 Bootstrapping..."
-melos bootstrap
-echo "✅ Bootstrap complete"
-echo
-
-# 3️⃣ Detect changed packages since last tag
-LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-if [[ -n "$LAST_TAG" ]]; then
-  CHANGED=$(melos list --diff "$LAST_TAG..HEAD" --no-private)
-else
-  echo "⚠️ No previous tag found. Considering all packages as changed."
-  CHANGED="all"
-fi
-
-if [[ -z "$CHANGED" ]]; then
-  echo "✅ No package changes detected. Exiting."
+if [ -z "$CHANGED_PACKAGES" ]; then
+  echo "✅ No changed packages detected."
   exit 0
 fi
 
-# 4️⃣ Stash any workflow file changes (to avoid workflow scope block)
-echo "🛡️  Temporarily stashing workflow file changes..."
-git stash push -m "temp-workflow-changes" -- .github/workflows || true
+echo "📦 Changed packages:"
+echo "$CHANGED_PACKAGES"
 
-# 5️⃣ Version bump + changelog
-echo "📦 Generating versions & changelogs..."
-melos version \
-  --yes \
-  --git-tag-version \
-  --changelog \
-  --message "chore(release): publish packages {new_package_versions}"
+ALL_PACKAGES=()
 
-echo "✅ Versions & changelogs generated"
-echo
+for pkg in $CHANGED_PACKAGES; do
+  ALL_PACKAGES+=("$pkg")
 
-# 6️⃣ Push changes + tags
-echo "⬆️  Pushing commits & tags..."
-git push origin HEAD
-git push origin --follow-tags
+  echo "🔗 Finding dependents of package: $pkg"
+  DEPENDENTS=$(melos list --depends-on="$pkg" --include-dependents --json | jq -r '.[].name')
 
-# 7️⃣ Restore workflow changes (if any)
-if git stash list | grep -q "temp-workflow-changes"; then
-  echo "♻️  Restoring workflow file changes..."
-  git stash pop || true
-fi
+  if [ -n "$DEPENDENTS" ]; then
+    echo "➡️ Dependents found: $DEPENDENTS"
+    for dep in $DEPENDENTS; do
+      ALL_PACKAGES+=("$dep")
+    done
+  else
+    echo "➡️ No dependents found for $pkg"
+  fi
+done
 
-echo
-echo "🎉 Release complete!"
+# Remove duplicates
+ALL_PACKAGES=($(printf "%s\n" "${ALL_PACKAGES[@]}" | sort -u))
+
+echo "🚀 Packages to force version bump and update changelogs:"
+printf '%s\n' "${ALL_PACKAGES[@]}"
+
+# Join by comma for melos flag
+FORCE_PUBLISH_CSV=$(IFS=,; echo "${ALL_PACKAGES[*]}")
+
+#echo "🔧 Running version bump..."
+#melos version --force-publish="$FORCE_PUBLISH_CSV" --yes
+
+echo "🔢 Running version bump (will update dependents automatically)..."
+melos version --yes
+
+echo "✅ Version bump complete"
+#melos changelog
+
+
+echo "✅ Done!"

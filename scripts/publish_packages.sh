@@ -30,8 +30,6 @@ echo "✅ Version bump complete"
 
 echo "📌 Pushing commits & tags..."
 git push --follow-tags
-#git push
-#git push --tags
 
 echo "🔍 Dry-run publish..."
 melos publish --dry-run

@@ -1,1 +1,2 @@
 packages/reusable_editor
+packages/upload_progress_indicator

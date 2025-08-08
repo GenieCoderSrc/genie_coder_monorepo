@@ -27,6 +27,12 @@ for PKG_DIR in $CHANGED_PACKAGES; do
     PKG_NAME=$(basename "$PKG_DIR")
     echo "🔹 Processing package: $PKG_NAME"
 
+    # Check if package folder has any unstaged changes
+    if ! git diff --name-only "$PKG_DIR" | grep .; then
+        echo "⚠️ No unstaged changes detected in $PKG_NAME, skipping..."
+        continue
+    fi
+
     echo "Select commit type:"
     select TYPE in feat fix chore docs style refactor perf test; do
         if [[ -n "$TYPE" ]]; then
@@ -38,14 +44,7 @@ for PKG_DIR in $CHANGED_PACKAGES; do
 
     COMMIT_MSG="$TYPE($PKG_NAME): $DESC"
 
-    # Stage package files by folder path
     git add "$PKG_DIR"
-
-    # Skip commit if no staged changes
-    if git diff --cached --quiet; then
-        echo "⚠️ No staged changes for $PKG_NAME, skipping..."
-        continue
-    fi
 
     git commit -m "$COMMIT_MSG"
     git push

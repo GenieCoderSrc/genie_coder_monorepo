@@ -8,6 +8,13 @@ command:
     linkToCommits: true
     updateGitTagRefs: true
     includeCommitId: true
+    updateDependents: true
+    dependents:
+      update: true
+    conventionalCommits: true       # 🚀 Enables changelog generation
+    changelog:                       # 🚀 Per-package changelog
+      entryFile: CHANGELOG.md
+      includeCommits: true
   bootstrap:
     runPubGetInParallel: true
     usePubspecOverrides: true

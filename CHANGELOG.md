@@ -21,6 +21,27 @@ Packages with other changes:
 
 #### `image_core` - `v0.0.4`
 
+ - ### Aug 9, 2025 \n ### ✨ Updated \n - Updated image_core version as 0.0.4
+
+
+## 2025-08-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`image_core` - `v0.0.4`](#image_core---v004)
+
+---
+
+#### `image_core` - `v0.0.4`
+
  - Updated image_core version as 0.0.4
 
 

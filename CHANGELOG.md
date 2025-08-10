@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_float_button` - `v0.0.2`](#app_float_button---v002)
+
+---
+
+#### `app_float_button` - `v0.0.2`
+
+ - Bump "app_float_button" to `0.0.2`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_drop_down_menu` - `v0.0.2`](#app_drop_down_menu---v002)
 
 ---

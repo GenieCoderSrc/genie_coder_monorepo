@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`date_time_converter` - `v0.0.4`](#date_time_converter---v004)
+
+---
+
+#### `date_time_converter` - `v0.0.4`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`data_parser` - `v0.0.6`](#data_parser---v006)
 
 ---

@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`fire_base_real_time_db` - `v0.0.5`](#fire_base_real_time_db---v005)
+
+---
+
+#### `fire_base_real_time_db` - `v0.0.5`
+
+ - Bump "fire_base_real_time_db" to `0.0.5`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`exception_type` - `v0.0.4`](#exception_type---v004)
 
 ---

@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_drop_down_menu` - `v0.0.3`](#app_drop_down_menu---v003)
+
+---
+
+#### `app_drop_down_menu` - `v0.0.3`
+
+ - Bump "app_drop_down_menu" to `0.0.3`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_date_picker` - `v0.0.5`](#app_date_picker---v005)
 
 ---

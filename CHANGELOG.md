@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`exception_type` - `v0.0.4`](#exception_type---v004)
+
+---
+
+#### `exception_type` - `v0.0.4`
+
+ - Bump "exception_type" to `0.0.4`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`date_time_converter` - `v0.0.4`](#date_time_converter---v004)
 
 ---

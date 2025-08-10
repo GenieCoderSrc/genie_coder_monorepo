@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`reusable_app_bar` - `v0.0.3`](#reusable_app_bar---v003)
+
+---
+
+#### `reusable_app_bar` - `v0.0.3`
+
+ - Bump "reusable_app_bar" to `0.0.3`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`online_indicator` - `v0.0.3`](#online_indicator---v003)
 
 ---

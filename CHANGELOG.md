@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`bottom_navigation` - `v0.0.6`](#bottom_navigation---v006)
+
+---
+
+#### `bottom_navigation` - `v0.0.6`
+
+ - Bump "bottom_navigation" to `0.0.6`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_toast` - `v0.0.5`](#app_toast---v005)
 
 ---

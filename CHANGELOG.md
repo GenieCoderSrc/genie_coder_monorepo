@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`i_validator` - `v1.1.2`](#i_validator---v112)
+
+---
+
+#### `i_validator` - `v1.1.2`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`get_it_di_global_variable` - `v0.0.6`](#get_it_di_global_variable---v006)
 
 ---

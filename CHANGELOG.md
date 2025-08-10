@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`icon_data_parser` - `v0.0.4`](#icon_data_parser---v004)
+
+---
+
+#### `icon_data_parser` - `v0.0.4`
+
+ - Bump "icon_data_parser" to `0.0.4`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`i_validator` - `v1.1.2`](#i_validator---v112)
 
 ---

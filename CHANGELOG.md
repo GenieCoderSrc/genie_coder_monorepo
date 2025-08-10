@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`dart_data_type_parser` - `v0.0.3`](#dart_data_type_parser---v003)
+
+---
+
+#### `dart_data_type_parser` - `v0.0.3`
+
+ - Bump "dart_data_type_parser" to `0.0.3`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`builder_state` - `v0.0.8`](#builder_state---v008)
 
 ---

@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_style` - `v0.0.5`](#app_style---v005)
+
+---
+
+#### `app_style` - `v0.0.5`
+
+ - Bump "app_style" to `0.0.5`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_ritch_txt` - `v0.0.2`](#app_ritch_txt---v002)
 
 ---

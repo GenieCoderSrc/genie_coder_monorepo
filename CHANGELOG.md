@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`firestore_db_impl` - `v0.0.4`](#firestore_db_impl---v004)
+
+---
+
+#### `firestore_db_impl` - `v0.0.4`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`fire_base_real_time_db` - `v0.0.5`](#fire_base_real_time_db---v005)
 
 ---

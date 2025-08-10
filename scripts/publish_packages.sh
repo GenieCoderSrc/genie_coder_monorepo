@@ -28,13 +28,13 @@ echo "🔢 Detecting changes & bumping versions..."
 melos version --yes  # <-- no --all, only changed packages + dependents
 echo "✅ Version bump complete"
 
-echo "📌 Pushing commits & tags..."
-git push --follow-tags
+#echo "📌 Pushing commits & tags..."
+#git push --follow-tags
 
 echo "🔍 Dry-run publish..."
 melos publish --dry-run
 echo "✅ Dry run complete"
 
-echo "🚀 Publishing..."
-melos publish --no-dry-run --yes
+#echo "🚀 Publishing..."
+#melos publish --no-dry-run --yes
 echo "🎯 All changed packages published!"

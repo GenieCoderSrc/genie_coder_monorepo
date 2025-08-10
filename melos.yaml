@@ -7,17 +7,11 @@ command:
   version:
     linkToCommits: true
     updateGitTagRefs: true
-    includeCommitId: true
-    updateDependents: true
-    dependents:
-      update: true
-    conventionalCommits: true       # 🚀 Enables changelog generation
-    changelog:                       # 🚀 Per-package changelog
-      entryFile: CHANGELOG.md
-      includeCommits: true
+    workspaceChangelog: false
+
   bootstrap:
     runPubGetInParallel: true
-    usePubspecOverrides: true
+
 
 
 scripts:
@@ -27,10 +21,7 @@ scripts:
     run: dart format .
   test:
     run: flutter test --coverage
-    select-package:
-      dir-exists: test
-      file-exists: pubspec.yaml
-      depends-on: flutter_test
+
 
 
 

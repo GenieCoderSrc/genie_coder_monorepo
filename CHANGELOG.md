@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`json_list_data_parser` - `v0.0.3`](#json_list_data_parser---v003)
+
+---
+
+#### `json_list_data_parser` - `v0.0.3`
+
+ - Bump "json_list_data_parser" to `0.0.3`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`image_picker_adapter` - `v0.0.4`](#image_picker_adapter---v004)
 
 ---

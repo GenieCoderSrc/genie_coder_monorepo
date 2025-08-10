@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_color_parser` - `v0.0.7`](#app_color_parser---v007)
+
+---
+
+#### `app_color_parser` - `v0.0.7`
+
+ - Bump "app_color_parser" to `0.0.7`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`reusable_app_bar` - `v0.0.3`](#reusable_app_bar---v003)
 
 ---

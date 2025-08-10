@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_ritch_txt` - `v0.0.2`](#app_ritch_txt---v002)
+
+---
+
+#### `app_ritch_txt` - `v0.0.2`
+
+ - Bump "app_ritch_txt" to `0.0.2`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_info_smart_unit` - `v0.0.5`](#app_info_smart_unit---v005)
 
 ---

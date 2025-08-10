@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`data_parser` - `v0.0.6`](#data_parser---v006)
+
+---
+
+#### `data_parser` - `v0.0.6`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`dart_data_type_parser` - `v0.0.3`](#dart_data_type_parser---v003)
 
 ---

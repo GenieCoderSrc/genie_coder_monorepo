@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`navigation_without_context` - `v0.0.4`](#navigation_without_context---v004)
+
+---
+
+#### `navigation_without_context` - `v0.0.4`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`local_data_impl` - `v0.0.4`](#local_data_impl---v004)
 
 ---

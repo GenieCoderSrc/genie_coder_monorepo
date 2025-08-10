@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_info_smart_unit` - `v0.0.5`](#app_info_smart_unit---v005)
+
+---
+
+#### `app_info_smart_unit` - `v0.0.5`
+
+ - Bump "app_info_smart_unit" to `0.0.5`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_float_button` - `v0.0.2`](#app_float_button---v002)
 
 ---

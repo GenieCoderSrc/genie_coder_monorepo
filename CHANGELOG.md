@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`get_it_di_global_variable` - `v0.0.6`](#get_it_di_global_variable---v006)
+
+---
+
+#### `get_it_di_global_variable` - `v0.0.6`
+
+ - Bump "get_it_di_global_variable" to `0.0.6`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`firestore_db_impl` - `v0.0.4`](#firestore_db_impl---v004)
 
 ---

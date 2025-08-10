@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`loading_builder` - `v0.0.4`](#loading_builder---v004)
+
+---
+
+#### `loading_builder` - `v0.0.4`
+
+ - Bump "loading_builder" to `0.0.4`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`language_translator` - `v0.0.7`](#language_translator---v007)
 
 ---

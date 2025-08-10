@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`builder_state` - `v0.0.8`](#builder_state---v008)
+
+---
+
+#### `builder_state` - `v0.0.8`
+
+ - Bump "builder_state" to `0.0.8`.
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`bottom_navigation` - `v0.0.6`](#bottom_navigation---v006)
 
 ---

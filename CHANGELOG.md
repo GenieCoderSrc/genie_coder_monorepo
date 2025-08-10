@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`image_picker_adapter` - `v0.0.4`](#image_picker_adapter---v004)
+
+---
+
+#### `image_picker_adapter` - `v0.0.4`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`icon_data_parser` - `v0.0.4`](#icon_data_parser---v004)
 
 ---

@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`app_date_picker` - `v0.0.4`](#app_date_picker---v004)
+
+---
+
+#### `app_date_picker` - `v0.0.4`
+
+
+## 2025-08-10
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`app_color_parser` - `v0.0.6`](#app_color_parser---v006)
 
 ---

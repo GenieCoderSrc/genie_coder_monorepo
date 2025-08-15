@@ -1,6 +1,1 @@
-packages/app_date_picker
-packages/app_drop_down_menu
-packages/fire_base_real_time_db
-packages/location_crud_service-
-packages/reusable_image_widget
-packages/rounded_scaffold_body
+packages/reusable_dialog

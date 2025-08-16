@@ -35,6 +35,6 @@ echo "🔍 Dry-run publish..."
 melos publish --dry-run
 echo "✅ Dry run complete"
 
-#echo "🚀 Publishing..."
-#melos publish --no-dry-run --yes
+echo "🚀 Publishing..."
+melos publish --no-dry-run --yes
 echo "🎯 All changed packages published!"

@@ -8,3 +8,4 @@ build/
 .pub-cache/
 .env
 **/pubspec_overrides.yaml
+/packages/fire_base_real_time_db/coverage/

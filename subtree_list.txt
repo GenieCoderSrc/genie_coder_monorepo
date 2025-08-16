@@ -1,1 +1,1 @@
-packages/reusable_image_widget
+packages/reusable_app_bar

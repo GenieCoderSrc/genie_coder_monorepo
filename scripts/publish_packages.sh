@@ -7,7 +7,7 @@ cd "$ROOT_DIR" || exit 1
 echo "📦 Melos Bootstrap & Publish Script"
 
 echo "🔁 Bootstrapping..."
-melos bootstrapo
+melos bootstrap
 echo "✅ Bootstrap complete"
 
 if [[ "${RUN_TESTS:-false}" == "true" ]]; then

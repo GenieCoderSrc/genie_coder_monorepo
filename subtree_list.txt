@@ -1,1 +1,3 @@
-packages/image_core
+packages/fire_base_real_time_db
+packages/fire_storage_impl
+packages/image_uploader

@@ -1,1 +1,1 @@
-packages/rounded_scaffold_body
+packages/reusable_image_widget

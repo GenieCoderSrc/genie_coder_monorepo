@@ -28,8 +28,8 @@ fi
 #melos version --yes  # <-- no --all, only changed packages + dependents
 #echo "✅ Version bump complete"
 
-#echo "📌 Pushing commits & tags..."
-#git push --follow-tags
+echo "📌 Pushing commits & tags..."
+git push --follow-tags
 
 echo "🔍 Dry-run publish..."
 melos publish --dry-run

@@ -1,1 +1,1 @@
-packages/location_crud_service-
+packages/reusable_image_widget

@@ -1,60 +1,60 @@
-name: Release and Publish
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  release:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          # This is critical! The action needs to check out the repository with a Personal Access Token (PAT)
-          # that has write permissions to create new commits and tags.
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.32.8'
-
-      - name: Install Melos
-        run: flutter pub global activate melos
-
-      - name: Run Melos bootstrap
-        run: melos bootstrap
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install Conventional Changelog Melos Plugin
-        run: |
-          npm install -g conventional-changelog-cli
-          npm install --prefix . melos-changelog
-
-      - name: Version packages and create changelog
-        id: version
-        run: melos version --yes --no-push
-        # Make sure your pub.dev token is available as an environment variable
-        env:
-          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
-
-      - name: Push changes and tags
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "chore: version bump and changelog"
-          git push
-          git push --tags
-
-      - name: Publish to pub.dev
-        run: melos publish --yes
-        env:
-          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+#name: Release and Publish
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  release:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#        with:
+#          # This is critical! The action needs to check out the repository with a Personal Access Token (PAT)
+#          # that has write permissions to create new commits and tags.
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#
+#      - name: Setup Flutter
+#        uses: subosito/flutter-action@v2
+#        with:
+#          flutter-version: '3.32.8'
+#
+#      - name: Install Melos
+#        run: flutter pub global activate melos
+#
+#      - name: Run Melos bootstrap
+#        run: melos bootstrap
+#
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: '18'
+#
+#      - name: Install Conventional Changelog Melos Plugin
+#        run: |
+#          npm install -g conventional-changelog-cli
+#          npm install --prefix . melos-changelog
+#
+#      - name: Version packages and create changelog
+#        id: version
+#        run: melos version --yes --no-push
+#        # Make sure your pub.dev token is available as an environment variable
+#        env:
+#          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+#
+#      - name: Push changes and tags
+#        run: |
+#          git config user.name "github-actions[bot]"
+#          git config user.email "github-actions[bot]@users.noreply.github.com"
+#          git add .
+#          git commit -m "chore: version bump and changelog"
+#          git push
+#          git push --tags
+#
+#      - name: Publish to pub.dev
+#        run: melos publish --yes
+#        env:
+#          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}

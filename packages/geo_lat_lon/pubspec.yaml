@@ -1,13 +1,13 @@
 name: geo_lat_lon
 description: "geo_lat_lon enables your flutter app to store and query cloud firestore documents based on their geographic location."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/GenieCoderSrc/geo_lat_lon
 repository: https://github.com/GenieCoderSrc/geo_lat_lon
 issue_tracker: https://github.com/GenieCoderSrc/geo_lat_lon/issues
 
 environment:
-  sdk: ^3.8.1
-  flutter: ">=1.17.0"
+  sdk: ^3.9.0
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
@@ -19,8 +19,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
-  mockito: ^5.5.0
+  
+#  mockito: ^5.5.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -4,6 +4,16 @@ All notable changes to the `geo_lat_lon` package will be documented in this file
 
 ---
 
+## 0.0.4
+
+### Aug 22, 2025
+
+### ✨ Updated
+
+- Updated Dart sdk to 3.9.0
+- Removed `flutter_lints` Dependency
+- Removed `mockito` Dependency
+
 ## 0.0.3
 
 ### Aug 6, 2025
@@ -11,7 +21,6 @@ All notable changes to the `geo_lat_lon` package will be documented in this file
 ### ✅Refactored
 
 * ✅ Renamed `GeoLatLon` to `GeoFirePoint`.
-
 
 ## 0.0.2
 

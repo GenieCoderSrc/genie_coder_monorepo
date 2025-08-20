@@ -1,1 +1,1 @@
-packages/image_uploader
+packages/image_core

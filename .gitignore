@@ -9,3 +9,4 @@ build/
 .env
 **/pubspec_overrides.yaml
 /packages/*/coverage/
+/apps/

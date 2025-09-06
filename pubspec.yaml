@@ -17,4 +17,4 @@ dependencies:
 #  cloud_firestore: ^6.0.0
 
 dev_dependencies:
-  melos: ^6.3.3
+  melos: ^7.1.0

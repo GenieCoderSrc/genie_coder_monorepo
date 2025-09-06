@@ -1,6 +1,7 @@
 name: genie_coder_monorepo
 repository: https://github.com/GenieCoderSrc/genie_coder_monorepo
 packages:
+  - apps/**
   - packages/*
 
 command:

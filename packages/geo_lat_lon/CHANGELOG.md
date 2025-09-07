@@ -4,6 +4,14 @@ All notable changes to the `geo_lat_lon` package will be documented in this file
 
 ---
 
+## 0.0.5
+
+### Sep 8, 2025
+
+### ✨ Updated
+
+- Updated `cloud_firestore` to 6.0.1
+
 ## 0.0.4
 
 ### Aug 22, 2025

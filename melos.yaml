@@ -1,29 +1,30 @@
 name: genie_coder_monorepo
 repository: https://github.com/GenieCoderSrc/genie_coder_monorepo
-packages:
-  - apps/**
-  - packages/*
 
+packages:
+  - "packages/**"
+
+# -----------------------------
+# Commands and Versioning
+# -----------------------------
 command:
   version:
     linkToCommits: true
     updateGitTagRefs: true
-    workspaceChangelog: false
+    workspaceChangelog: true   # automatically update CHANGELOG.md for each package
 
   bootstrap:
     runPubGetInParallel: true
 
-
-
+# -----------------------------
+# Useful Scripts
+# -----------------------------
 scripts:
   analyze:
     run: flutter analyze
+
   format:
     run: dart format .
+
   test:
     run: flutter test --coverage
-
-
-
-
-

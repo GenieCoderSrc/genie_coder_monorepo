@@ -568,6 +568,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/firestore_db_impl/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/firestore_db_impl/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/firestore_db_impl/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/form_state/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/form_state/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/form_state/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/get_it_di_global_variable/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/get_it_di_global_variable/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/get_it_di_global_variable/build" />
@@ -601,6 +604,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/loading_builder/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/loading_builder/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/loading_builder/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/loading_state/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/loading_state/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/loading_state/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/local_data_impl/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/local_data_impl/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/local_data_impl/build" />
@@ -658,6 +664,9 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/state_msg_builder/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/state_msg_builder/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/state_msg_builder/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/submission_state/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/submission_state/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/submission_state/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tag_builder/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tag_builder/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/packages/tag_builder/build" />

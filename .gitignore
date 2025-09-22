@@ -10,3 +10,8 @@ build/
 **/pubspec_overrides.yaml
 /packages/*/coverage/
 /apps/
+/packages/bottom_navigation/devtools_options.yaml
+/packages/fire_storage_impl/devtools_options.yaml
+/packages/image_uploader/devtools_options.yaml
+/packages/language_translator/devtools_options.yaml
+/packages/upload_progress_indicator/devtools_options.yaml

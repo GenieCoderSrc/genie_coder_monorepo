@@ -16,7 +16,7 @@ dependencies:
   # Import and use GeoFlutterFire2 package (advance/geoflutterfire2.dart only) just for smooth comparison.
   # No need to import it when you develop your app.
   # geoflutterfire2: ^2.3.15
-  geo_lat_lon:
+  geo_lat_lon: 
     path: ../
   google_maps_flutter: ^2.13.1
   rxdart: ^0.28.0

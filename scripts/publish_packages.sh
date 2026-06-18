@@ -24,9 +24,9 @@ if [[ -n "$(git status --porcelain)" ]]; then
   git commit -m "chore: prepare for version bump"
 fi
 
-#echo "🔢 Detecting changes & bumping versions..."
-#melos version --yes  # <-- no --all, only changed packages + dependents
-#echo "✅ Version bump complete"
+echo "🔢 Detecting changes & bumping versions..."
+melos version --yes  # <-- no --all, only changed packages + dependents
+echo "✅ Version bump complete"
 
 echo "📌 Pushing commits & tags..."
 git push --follow-tags

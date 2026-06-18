@@ -25,7 +25,8 @@ if [[ -n "$(git status --porcelain)" ]]; then
 fi
 
 echo "🔢 Detecting changes & bumping versions..."
-melos version --yes  # <-- no --all, only changed packages + dependents
+melos version --no --no-changelog # <-- no --all, only changed packages + dependents
+#melos version --yes  # <-- no --all, only changed packages + dependents
 echo "✅ Version bump complete"
 
 echo "📌 Pushing commits & tags..."

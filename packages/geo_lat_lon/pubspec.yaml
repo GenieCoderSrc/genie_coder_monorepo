@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cloud_firestore: ^6.5.0
+  cloud_firestore: ^6.6.0
   rxdart: ^0.28.0
 
 dev_dependencies:

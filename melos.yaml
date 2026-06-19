@@ -11,24 +11,7 @@ command:
   version:
     linkToCommits: true
     updateGitTagRefs: true
-    workspaceChangelog: false
-
-    changelog:
-      # CHANGED: Lowered the heading levels to '####' so they cascade
-      # cleanly beneath Melos's default combined version/date string.
-      headings:
-        chore: "#### ✨ Updated"
-        refactor: "#### ✨ Updated"
-        feat: "#### 🚀 Added"
-        fix: "#### 🐛 Fixed"
-        docs: "#### 📝 Documentation"
-
-      includeCommitTypes:
-        - chore
-        - refactor
-        - feat
-        - fix
-        - docs
+    workspaceChangelog: true   # automatically update CHANGELOG.md for each package
 
   bootstrap:
     runPubGetInParallel: true

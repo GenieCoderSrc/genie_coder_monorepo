@@ -3,6 +3,8 @@ repository: https://github.com/GenieCoderSrc/genie_coder_monorepo
 
 packages:
   - "packages/**"
+  - "!packages/**/build/**"
+  - "!packages/**/.dart_tool/**"
 
 # -----------------------------
 # Commands and Versioning
@@ -11,7 +13,7 @@ command:
   version:
     linkToCommits: true
     updateGitTagRefs: true
-    workspaceChangelog: true   # automatically update CHANGELOG.md for each package
+    workspaceChangelog: false   # automatically update CHANGELOG.md for each package
 
   bootstrap:
     runPubGetInParallel: true

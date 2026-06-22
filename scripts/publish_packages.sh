@@ -18,6 +18,7 @@ fi
 echo "🧼 Formatting..."
 melos run format || echo "⚠️ Formatting failed, continuing..."
 
+
 echo "📌 Committing pre-version changes..."
 if [[ -n "$(git status --porcelain)" ]]; then
   git add .

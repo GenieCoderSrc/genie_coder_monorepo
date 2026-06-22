@@ -1,0 +1,165 @@
+[submodule "packages/rounded_scaffold_body"]
+	path = packages/rounded_scaffold_body
+	url = https://github.com/GenieCoderSrc/rounded_scaffold_body.git
+[submodule "packages/app_info_smart_unit"]
+	path = packages/app_info_smart_unit
+	url = https://github.com/GenieCoderSrc/app_info_smart_unit.git
+[submodule "packages/tag_builder"]
+	path = packages/tag_builder
+	url = https://github.com/GenieCoderSrc/tag_builder.git
+[submodule "packages/rest_api_impl"]
+	path = packages/rest_api_impl
+	url = https://github.com/GenieCoderSrc/rest_api_impl.git
+[submodule "packages/data_parser"]
+	path = packages/data_parser
+	url = https://github.com/GenieCoderSrc/data_parser.git
+[submodule "packages/bottom_navigation"]
+	path = packages/bottom_navigation
+	url = https://github.com/GenieCoderSrc/bottom_navigation.git
+[submodule "packages/reusable_speed_dial"]
+	path = packages/reusable_speed_dial
+	url = https://github.com/GenieCoderSrc/reusable_speed_dial.git
+[submodule "packages/builder_state"]
+	path = packages/builder_state
+	url = https://github.com/GenieCoderSrc/builder_state.git
+[submodule "packages/app_sliver"]
+	path = packages/app_sliver
+	url = https://github.com/GenieCoderSrc/app_sliver.git
+[submodule "packages/get_it_di_global_variable"]
+	path = packages/get_it_di_global_variable
+	url = https://github.com/GenieCoderSrc/get_it_di_global_variable.git
+[submodule "packages/dart_data_type_parser"]
+	path = packages/dart_data_type_parser
+	url = https://github.com/GenieCoderSrc/dart_data_type_parser.git
+[submodule "packages/language_translator"]
+	path = packages/language_translator
+	url = https://github.com/GenieCoderSrc/language_translator.git
+[submodule "packages/image_core"]
+	path = packages/image_core
+	url = https://github.com/GenieCoderSrc/image_core.git
+[submodule "packages/app_color_parser"]
+	path = packages/app_color_parser
+	url = https://github.com/GenieCoderSrc/app_color_parser.git
+[submodule "packages/app_float_button"]
+	path = packages/app_float_button
+	url = https://github.com/GenieCoderSrc/app_float_button.git
+[submodule "packages/loading_builder"]
+	path = packages/loading_builder
+	url = https://github.com/GenieCoderSrc/loading_builder.git
+[submodule "packages/submission_state"]
+	path = packages/submission_state
+	url = https://github.com/GenieCoderSrc/submission_state.git
+[submodule "packages/date_time_converter"]
+	path = packages/date_time_converter
+	url = https://github.com/GenieCoderSrc/date_time_converter.git
+[submodule "packages/firestore_db_impl"]
+	path = packages/firestore_db_impl
+	url = https://github.com/GenieCoderSrc/firestore_db_impl.git
+[submodule "packages/reusable_image_widget"]
+	path = packages/reusable_image_widget
+	url = https://github.com/GenieCoderSrc/reusable_image_widget.git
+[submodule "packages/image_picker_adapter"]
+	path = packages/image_picker_adapter
+	url = https://github.com/GenieCoderSrc/image_picker_adapter.git
+[submodule "packages/icon_data_generator"]
+	path = packages/icon_data_generator
+	url = https://github.com/GenieCoderSrc/icon_data_generator.git
+[submodule "packages/online_indicator"]
+	path = packages/online_indicator
+	url = https://github.com/GenieCoderSrc/online_indicator.git
+[submodule "packages/theme_setting"]
+	path = packages/theme_setting
+	url = https://github.com/GenieCoderSrc/theme_setting.git
+[submodule "packages/i_tdd"]
+	path = packages/i_tdd
+	url = https://github.com/GenieCoderSrc/i_tdd.git
+[submodule "packages/navigation_without_context"]
+	path = packages/navigation_without_context
+	url = https://github.com/GenieCoderSrc/navigation_wihout_context.git
+[submodule "packages/app_toast"]
+	path = packages/app_toast
+	url = https://github.com/GenieCoderSrc/app_toast.git
+[submodule "packages/app_date_picker"]
+	path = packages/app_date_picker
+	url = https://github.com/GenieCoderSrc/app_date_picker.git
+[submodule "packages/state_msg_builder"]
+	path = packages/state_msg_builder
+	url = https://github.com/GenieCoderSrc/state_msg_builder.git
+[submodule "packages/image_uploader"]
+	path = packages/image_uploader
+	url = https://github.com/GenieCoderSrc/image_uploader.git
+[submodule "packages/fire_base_real_time_db"]
+	path = packages/fire_base_real_time_db
+	url = https://github.com/GenieCoderSrc/fire_base_real_time_db.git
+[submodule "packages/reusable_app_bar"]
+	path = packages/reusable_app_bar
+	url = https://github.com/GenieCoderSrc/reusable_app_bar.git
+[submodule "packages/location_reader"]
+	path = packages/location_reader
+	url = https://github.com/GenieCoderSrc/location_reader.git
+[submodule "packages/fire_storage_impl"]
+	path = packages/fire_storage_impl
+	url = https://github.com/GenieCoderSrc/fire_storage_impl.git
+[submodule "packages/reusable_switch_btn"]
+	path = packages/reusable_switch_btn
+	url = https://github.com/GenieCoderSrc/reusable_switch_btn.git
+[submodule "packages/reusable_editor"]
+	path = packages/reusable_editor
+	url = git@github.com:GenieCoderSrc/reusable_editor.git
+[submodule "packages/icon_data_parser"]
+	path = packages/icon_data_parser
+	url = https://github.com/GenieCoderSrc/icon_data_parser.git
+[submodule "packages/app_style"]
+	path = packages/app_style
+	url = https://github.com/GenieCoderSrc/app_style.git
+[submodule "packages/exception_type"]
+	path = packages/exception_type
+	url = https://github.com/GenieCoderSrc/exception_type.git
+[submodule "packages/app_drop_down_menu"]
+	path = packages/app_drop_down_menu
+	url = https://github.com/GenieCoderSrc/app_drop_down_menu.git
+[submodule "packages/upload_progress_indicator"]
+	path = packages/upload_progress_indicator
+	url = https://github.com/GenieCoderSrc/upload_progress_indicator.git
+[submodule "packages/loading_state"]
+	path = packages/loading_state
+	url = https://github.com/GenieCoderSrc/loading_state.git
+[submodule "packages/reusable_dialog"]
+	path = packages/reusable_dialog
+	url = https://github.com/GenieCoderSrc/reusable_dialog.git
+[submodule "packages/reusable_icon"]
+	path = packages/reusable_icon
+	url = https://github.com/GenieCoderSrc/reusable_icon.git
+[submodule "packages/reusable_button"]
+	path = packages/reusable_button
+	url = https://github.com/GenieCoderSrc/reusable_button.git
+[submodule "packages/reusable_tab_bar"]
+	path = packages/reusable_tab_bar
+	url = https://github.com/GenieCoderSrc/reusable_tab_bar.git
+[submodule "packages/i_validator"]
+	path = packages/i_validator
+	url = https://github.com/GenieCoderSrc/i_validator.git
+[submodule "packages/json_list_data_parser"]
+	path = packages/json_list_data_parser
+	url = https://github.com/GenieCoderSrc/json_list_data_parser.git
+[submodule "packages/reusable_bottom_sheet"]
+	path = packages/reusable_bottom_sheet
+	url = https://github.com/GenieCoderSrc/reusable_bottom_sheet.git
+[submodule "packages/location_crud_service"]
+	path = packages/location_crud_service
+	url = https://github.com/GenieCoderSrc/location_crud_service.git
+[submodule "packages/reusable_list_item"]
+	path = packages/reusable_list_item
+	url = https://github.com/GenieCoderSrc/reusable_list_item.git
+[submodule "packages/text_field_builder"]
+	path = packages/text_field_builder
+	url = https://github.com/GenieCoderSrc/text_field_builder.git
+[submodule "packages/reusable_list_view"]
+	path = packages/reusable_list_view
+	url = https://github.com/GenieCoderSrc/reusable_list_view.git
+[submodule "packages/app_ritch_txt"]
+	path = packages/app_ritch_txt
+	url = https://github.com/GenieCoderSrc/app_ritch_txt.git
+[submodule "packages/local_data_impl"]
+	path = packages/local_data_impl
+	url = https://github.com/GenieCoderSrc/local_data_impl.git

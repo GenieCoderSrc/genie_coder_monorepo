@@ -3,8 +3,10 @@ repository: https://github.com/GenieCoderSrc/genie_coder_monorepo
 
 packages:
   - "packages/**"
-  - "!packages/**/build/**"
-  - "!packages/**/.dart_tool/**"
+
+ignore:
+  - "packages/**/build/**"
+  - "packages/**/.dart_tool/**"
 
 # -----------------------------
 # Commands and Versioning
